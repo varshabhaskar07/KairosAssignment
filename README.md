@@ -48,3 +48,92 @@ graph TD
 
     D -->|Sends responses to| B
     D -->|Sends responses to| C
+
+
+
+## Setup and Installation
+Follow these steps to set up and run the project locally.
+
+### Prerequisites
+Before you begin, ensure you have the following installed:
+
+- Python 3.8+ : For the backend services.
+- Node.js and npm (or Yarn) : For the React frontend.
+- Git : For cloning the repository.
+### 1. Clone the Repository
+First, clone the project repository to your local machine:
+git clone https://github.com/varshabhaskar07/KairosAssignment.git
+cd KairosAssignment
+
+### 2. Backend Setup
+Navigate into the backend directory, create a virtual environment, install dependencies, and set up environment variables.
+cd kairos-take-home-0
+python -m venv venv
+
+On Windows:
+.\venv\Scripts\activate
+
+On macOS/Linux:
+source venv/bin/activate
+
+Install the required Python packages:
+pip install -r requirements.txt
+
+
+Create a .env file in the kairos-take-home-0 directory and add your API keys. Replace YOUR_GEMINI_API_KEY with your actual key:
+GEMINI_API_KEY=YOUR_GEMINI_API_KEY
+ANTHROPIC_API_KEY=YOUR_ANTHROPIC_API_KEY
+OPENAI_API_KEY=YOUR_OPENAI_API_KEY
+
+### 3. Frontend Setup
+Navigate into the frontend directory and install its dependencies.
+cd ../frontend
+npm install # or yarn install
+
+##How to Run
+
+### 1. Run the Backend
+Open a new terminal, navigate to the kairos-take-home-0 directory, activate the virtual environment, and run main.py :
+cd d:/KairosAssignment/kairos-take-home-0
+.\venv\Scripts\activate # On Windows
+# source venv/bin/activate # On macOS/Linux
+python main.py
+
+The backend server will start, typically on http://localhost:5000.
+
+### 2. Run the CLI (Optional)
+Open another terminal, navigate to the kairos-take-home-0 directory, activate the virtual environment, and run cli.py :
+
+cd d:/KairosAssignment/kairos-take-home-0
+.\venv\Scripts\activate # On Windows
+# source venv/bin/activate # On macOS/Linux
+python cli.py
+
+
+### 3. Run the Frontend
+Open a third terminal, navigate to the frontend directory, and start the React development server:
+
+cd d:/KairosAssignment/frontend
+npm run dev # or yarn dev
+
+The frontend will typically be available at http://localhost:5173 (or similar).
+
+## Model Agnosticism Implementation
+The project achieves model agnosticism through a modular design where different LLM providers can be integrated by implementing a common interface. The pdf_summarize_server.py is designed to dynamically load and use different LLM models based on configuration, allowing for easy switching between Gemini, Anthropic, OpenAI, or other future models without significant code changes to the core logic.
+
+## Contributing
+We welcome contributions to the Scientific Paper Scout Agent! Please feel free to submit issues, fork the repository, and send pull requests.
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+
+
+
+
+
+
+
+
+
