@@ -78,7 +78,7 @@ python -m venv venv
 
 On Windows:
 ```bash
-.env\Scriptsctivate
+.\venv\Scripts\activate
 ```
 
 On macOS/Linux:
@@ -99,7 +99,7 @@ OPENAI_API_KEY=YOUR_OPENAI_API_KEY
 ```
 
 ### 3. Frontend Setup
-Navigate into the frontend directory and install its dependencies.
+Navigate to the frontend directory and install its dependencies.
 ```bash
 cd ../frontend
 npm install # or yarn install
@@ -110,7 +110,7 @@ npm install # or yarn install
 ### 1. Run the Backend
 ```bash
 cd d:/KairosAssignment/kairos-take-home-0
-.env\Scriptsctivate # On Windows
+.\venv\Scripts\activate # On Windows
 # source venv/bin/activate # On macOS/Linux
 python main.py
 ```
@@ -119,7 +119,7 @@ The backend server will start, typically on http://localhost:5000.
 ### 2. Run the CLI (Optional)
 ```bash
 cd d:/KairosAssignment/kairos-take-home-0
-.env\Scriptsctivate # On Windows
+.\venv\Scripts\activate # On Windows
 # source venv/bin/activate # On macOS/Linux
 python cli.py
 ```
