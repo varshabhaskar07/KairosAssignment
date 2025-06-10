@@ -2,8 +2,7 @@
 # 🧠 Scientific Paper Scout Agent
 
 ## 📌 Project Overview
-
-This project implements a backend system for a "Scientific Paper Scout Agent" application. It allows users to search for scientific papers and summarize PDF documents using various Large Language Models (LLMs). The system is designed with a modular and extensible architecture, supporting different LLM providers and offering both a Command Line Interface (CLI) and a React-based web interface.
+This project involves the development of a full-stack application, the "Scientific Paper Scout Agent." It comprises a robust Python backend designed for searching and summarizing scientific PDFs using various Large Language Models (LLMs), and an interactive React-based frontend that provides a user-friendly interface. The system is built with a modular and extensible design, supporting multiple LLM providers and offering both a Command Line Interface (CLI) for backend interaction and a rich web experience through the frontend.
 
 ## Features
 
