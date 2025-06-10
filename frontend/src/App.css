@@ -1,0 +1,247 @@
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #adeaf7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  scroll-behavior: smooth;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  font-family: 'Arial', sans-serif;
+  background-color: #adeaf7;
+  color: #333;
+  align-items: center;
+}
+
+/* Header */
+.header {
+  background-color: #4a90e2;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  z-index: 100;
+  position: sticky;
+  top: 0;
+  transition: all 0.3s ease;
+}
+
+/* Main Chat Container */
+.chat-container {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  overflow-y: auto;
+  background-color: #e9ecef;
+  width: 95%; /* Wider for better visibility */
+  max-width: 1200px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  margin: 20px auto;
+  transition: all 0.3s ease;
+}
+
+/* Messages */
+.messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+/* Individual Message Blocks */
+.message {
+  display: flex;
+  margin-bottom: 15px;
+  align-items: flex-end;
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.message.user {
+  justify-content: flex-end;
+}
+
+.message.agent {
+  justify-content: flex-start;
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 14px 20px;
+  border-radius: 20px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease;
+}
+
+.message.user .message-bubble {
+  background-color: #007bff;
+  color: white;
+  border-bottom-right-radius: 5px;
+}
+
+.message.agent .message-bubble {
+  background-color: #ffffff;
+  color: #333;
+  border-bottom-left-radius: 5px;
+}
+
+/* Input Section */
+.input-area {
+  display: flex;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  background-color: #f8f9fa;
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto 25px auto;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.input-area input {
+  flex-grow: 1;
+  padding: 15px 20px;
+  border: 1px solid #ced4da;
+  border-radius: 25px;
+  font-size: 16px;
+  margin-right: 10px;
+  outline: none;
+  transition: all 0.2s;
+  height: 50px;
+}
+
+.input-area input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.2);
+}
+
+.input-area button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background-color 0.3s ease, transform 0.2s;
+  height: 60px;
+}
+
+.input-area button:hover {
+  background-color: #8affa4;
+  transform: scale(1.05);
+}
+
+.paper-card {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 18px;
+  margin-bottom: 12px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+}
+
+.paper-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.1);
+}
+
+.paper-card h3 {
+  margin-top: 0;
+  color: #0056b3;
+  font-size: 20px;
+}
+
+.paper-card p {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.paper-card a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.paper-card a:hover {
+  text-decoration: underline;
+}
+
+
+.chat-message-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-message-content .text {
+  margin-bottom: 10px;
+}
+
+.chat-message-content .paper-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.chat-message-content .paper-list .paper-card {
+  flex: 1 1 calc(50% - 10px);
+  min-width: 300px;
+}
+
+/* Loading */
+.loading-indicator {
+  text-align: center;
+  padding: 10px;
+  font-style: italic;
+  color: #666;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chat-message-content .paper-list .paper-card {
+    flex: 1 1 100%;
+  }
+
+  .input-area input,
+  .input-area button {
+    font-size: 16px;
+    padding: 12px 18px;
+  }
+
+  .chat-container,
+  .input-area {
+    width: 95%;
+  }
+
+  .header {
+    font-size: 20px;
+  }
+}
