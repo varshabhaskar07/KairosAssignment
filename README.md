@@ -24,33 +24,6 @@ The project follows a client-server architecture with several key components:
 4.  **CLI (cli.py)**: A command-line interface for interacting with the Agent Host.
 5.  **React Frontend**: A web-based user interface for a more interactive experience.
 
-```mermaid
-graph TD
-    A[User] -->|Interacts with| B(CLI) 
-    A -->|Interacts with| C(React Frontend)
-
-    B -->|Sends requests to| D(Agent Host: main.py)
-    C -->|Sends requests to| D
-
-    D -->|Calls| E(Paper Search MCP Server: paper_search_server.py)
-    D -->|Calls| F(PDF Summarize MCP Server: pdf_summarize_server.py)
-
-    E -->|Queries| G(arXiv API)
-    F -->|Downloads| I(PDF URLs)
-    F -->|Uses| H(LLM Providers: Gemini, Anthropic, OpenAI)
-
-    G -->|Returns search results| E
-    I -->|Provides content| F
-    H -->|Returns summaries| F
-
-    E -->|Returns paper data| D
-    F -->|Returns summarized text| D
-
-    D -->|Sends responses to| B
-    D -->|Sends responses to| C
-
-
-
 ## Setup and Installation
 Follow these steps to set up and run the project locally.
 
@@ -126,6 +99,37 @@ We welcome contributions to the Scientific Paper Scout Agent! Please feel free t
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+
+
+```mermaid
+graph TD
+    A[User] -->|Interacts with| B(CLI) 
+    A -->|Interacts with| C(React Frontend)
+
+    B -->|Sends requests to| D(Agent Host: main.py)
+    C -->|Sends requests to| D
+
+    D -->|Calls| E(Paper Search MCP Server: paper_search_server.py)
+    D -->|Calls| F(PDF Summarize MCP Server: pdf_summarize_server.py)
+
+    E -->|Queries| G(arXiv API)
+    F -->|Downloads| I(PDF URLs)
+    F -->|Uses| H(LLM Providers: Gemini, Anthropic, OpenAI)
+
+    G -->|Returns search results| E
+    I -->|Provides content| F
+    H -->|Returns summaries| F
+
+    E -->|Returns paper data| D
+    F -->|Returns summarized text| D
+
+    D -->|Sends responses to| B
+    D -->|Sends responses to| C
+
+
+
+
 
 
 
